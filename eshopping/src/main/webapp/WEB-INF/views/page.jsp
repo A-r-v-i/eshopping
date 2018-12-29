@@ -27,16 +27,21 @@
 
 <script>
 	window.menu = '${title}';
+	
+	windows.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="${css}/shop-homepage.css" rel="stylesheet">
-
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
+<!-- DataTables Bootstrap CSS -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet">
 
 </head>
 
@@ -65,9 +70,10 @@
 			<c:if test="${userClickContact ==  true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
+
 			<!-- Load when user clicks AllProducts -->
-			<c:if test="${userClickAllProducts ==  true or userClickCategoryProducts == true}">
+			<c:if
+				test="${userClickAllProducts ==  true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 
@@ -77,9 +83,17 @@
 
 		<%@include file="./shared/footer.jsp"%>
 
+		<!-- JS -->
+		<script src="${js}/jquery.js"></script>
+
 		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!-- DATABASE PLUGIN -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- DATATable Bootstrap JS -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
 
 		<!-- myapp.js code -->
 		<script src="${js}/myapp.js"></script>

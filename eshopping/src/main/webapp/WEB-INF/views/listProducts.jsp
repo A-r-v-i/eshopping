@@ -9,30 +9,59 @@
 		</div>
 		<!-- to display actual products -->
 		<div class="col-md-9">
+			<!-- Added breadcrumb component -->
+			<div class="row">
+				<div class="col-md-12">
+					<c:if test="${userClickAllProducts == true}">
 
-			<div class="col-md-12">
-				<c:if test="${userClickAllProducts == true}">
-					<ol class="breadcrumb">
+						<script>
+							window.categoryId = '';
+						</script>
 
-						<li><a href="${contectRoot}/home">Home</a></li>
-						<li class="active">All Products</li>
+						<ol class="breadcrumb">
 
-					</ol>
-				</c:if>
+							<li><a href="${contectRoot}/home">Home</a></li>
+							<li class="active">All Products</li>
 
-				<c:if test="${userClickCategoryProducts == true}">
-					<ol class="breadcrumb">
+						</ol>
+					</c:if>
 
-						<li><a href="${contectRoot}/home">Home</a></li>
-						<li class="active">Category</li>
-						<li class="active">${category.name}></li>
-					</ol>
-				</c:if>
+					<c:if test="${userClickCategoryProducts == true}">
+
+						<script>
+							window.categoryId = '${category.id}';
+						</script>
+
+						<ol class="breadcrumb">
+
+							<li><a href="${contectRoot}/home">Home</a></li>
+							<li class="active">Category</li>
+							<li class="active">${category.name}></li>
+						</ol>
+					</c:if>
+
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-xs-12">
+					<table id="productListTable"
+						class="table table-striped table-bored">
+
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+							</tr>
+						</thead>
+
+					</table>
+				</div>
 
 			</div>
-
-
 		</div>
+
+
 
 	</div>
 
