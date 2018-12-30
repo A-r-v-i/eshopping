@@ -52,13 +52,38 @@ $(function() {
 					},
 					columns: [
 						{
-							data : 'name',
+							data: 'code',
+							mRender: function(data,type,row){
+								return '<img src="'+windows.contextRoot+'/resources/images/'+data+'.jpg" class="dataTableImg" />';
+							}
 						},
+						
 						{
 							data : 'name',
 						},
-						
-						
+						{
+							data : 'brand',
+						},
+						{
+							data : 'unitPrice',
+							mRender: function(data,type,row){
+								return '&#8377; ' + data;
+							}
+						},
+						{
+							data : 'quantity',
+						},
+						{
+							data: 'id',
+							bSorted: false,
+							mRender: function(data,type,row){
+								var str= '';
+								str += '<a href=" '+window.contextRoot+'/show/'+data+'/product" class="btn  btn-primary"><span class="glyphicon gluphicon-eye-open"></span>View</a> &#160;';
+								str += '<a href=" '+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-primary"	><span class="glyphicon gluphicon-shopping-cart"></span>Add to cart</a>';
+								
+								return str;
+							},
+						}
 					]
 				
 				});

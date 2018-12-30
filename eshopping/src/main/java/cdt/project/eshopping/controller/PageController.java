@@ -21,6 +21,7 @@ public class PageController {
 		mv.addObject("title","Home");
 		mv.addObject("userClickHome", true);
 		mv.addObject("categories", categoryDAO.list());
+		
 		return mv;
 	}
 	
@@ -79,6 +80,15 @@ public class PageController {
 		
 		return mv;
 
+	}
+	
+	/*Viewing single product*/
+	
+	@RequestMapping(value= "/show/{id}/product")
+	public ModelAndView showingSingleProduct(@PathVariable int id) {
+		ModelAndView mv = new ModelAndView("page");
+				
+		return mv;
 	}
 
 }
