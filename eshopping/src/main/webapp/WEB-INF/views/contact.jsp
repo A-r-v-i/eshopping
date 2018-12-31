@@ -6,9 +6,6 @@
 
 <p>Customer care:  1800-280 345 000</p><hr>
 
-
-
-
 </div>
 
 </div>

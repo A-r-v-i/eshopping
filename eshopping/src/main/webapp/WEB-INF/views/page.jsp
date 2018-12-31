@@ -18,6 +18,7 @@
 <head>
 
 <meta charset="utf-8">
+<meta http-equix="X-UA-Compatible" content="IE_edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -27,12 +28,12 @@
 
 <script>
 	window.menu = '${title}';
-	
+
 	windows.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
-<link href="${css}/bootstrap.min.css" rel="stylesheet">
+<link href="${css}/bootstrap.css" rel="stylesheet">
 
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
@@ -72,32 +73,32 @@
 			</c:if>
 
 			<!-- Load when user clicks AllProducts -->
-			<c:if
-				test="${userClickAllProducts ==  true or userClickCategoryProducts == true}">
+			<c:if test="${userClickAllProducts ==  true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 
 		</div>
+		<div>
 
-		<!-- Footer -->
+			<!-- Footer -->
 
-		<%@include file="./shared/footer.jsp"%>
+			<%@include file="./shared/footer.jsp"%>
 
-		<!-- JS -->
-		<script src="${js}/jquery.js"></script>
+			<!-- JS -->
+			<script src="${js}/jquery.js"></script>
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/bootstrap.bundle.min.js"></script>
+			<!-- Bootstrap core JavaScript -->
+			<script src="${js}/bootstrap.min.js"></script>
 
-		<!-- DATABASE PLUGIN -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		<!-- DATATable Bootstrap JS -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
+			<!-- DATABASE PLUGIN -->
+			<script src="${js}/jquery.dataTables.js"></script>
 
-		<!-- myapp.js code -->
-		<script src="${js}/myapp.js"></script>
+			<!-- DATATable Bootstrap JS -->
+			<script src="${js}/dataTables.bootstrap.js"></script>
 
+			<!-- myapp.js code -->
+			<script src="${js}/myapp.js"></script>
+		</div>
 	</div>
 </body>
 

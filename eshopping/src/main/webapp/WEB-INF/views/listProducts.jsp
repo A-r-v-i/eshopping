@@ -11,16 +11,16 @@
 		<div class="col-md-9">
 			<!-- Added breadcrumb component -->
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-lg-12">
 					<c:if test="${userClickAllProducts == true}">
 
-						<script>
+<!-- 						<script>
 							window.categoryId = '';
 						</script>
-
+ -->
 						<ol class="breadcrumb">
 
-							<li><a href="${contectRoot}/home">Home</a></li>
+							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">All Products</li>
 
 						</ol>
@@ -28,13 +28,13 @@
 
 					<c:if test="${userClickCategoryProducts == true}">
 
-						<script>
+	<!-- 					<script>
 							window.categoryId = '${category.id}';
 						</script>
-
+ -->
 						<ol class="breadcrumb">
 
-							<li><a href="${contectRoot}/home">Home</a></li>
+							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
 							<li class="active">${category.name}></li>
 						</ol>
