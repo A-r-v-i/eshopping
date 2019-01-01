@@ -10,40 +10,16 @@ import javax.persistence.Id;
 
 @Entity
 public class Product {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="productID")
-	private int Id;
-	private String code;
-	@Column(name="productName")
-	private String Name;
-	private String brand;
-	private String description;
-	@Column(name="unit_price")
-	private double unitPrice;
-	private int quantity;
-	@Column(name="is_active")
-	private boolean active;
-	@Column(name="category_id")
-	private int categoryId;
-	@Column(name="supplier_id")
-	private int supplierId;
-	private int purchase;
-	private int views;
 	
-	//default constructor to generate product id
-	public Product() {
-		this.code = "PRD"+ UUID.randomUUID().toString().substring(26).toUpperCase();
-	}
 	
 	
 	//getters & setters
 	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id= id;
 	}
 	public String getCode() {
 		return code;
@@ -100,10 +76,10 @@ public class Product {
 		this.supplierId = supplierId;
 	}
 	public int getPurchase() {
-		return purchase;
+		return purchases;
 	}
 	public void setPurchase(int purchase) {
-		this.purchase = purchase;
+		this.purchases = purchase;
 	}
 	public int getViews() {
 		return views;
@@ -112,5 +88,33 @@ public class Product {
 		this.views = views;
 	}
 
+	//default constructor to generate product id
+		public Product() {
+			this.code = "PRD"+ UUID.randomUUID().toString().substring(26).toUpperCase();
+		}
+		
+	//private fields
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@Column(name="product_Id")
+	private int id;
+	private String code;
+	//@Column(name="productName")
+	private String Name;
+	private String brand;
+	private String description;
+	@Column(name="unit_price")
+	private double unitPrice;
+	private int quantity;
+	@Column(name="is_active")
+	private boolean active;
+	@Column(name="category_id")
+	private int categoryId;
+	@Column(name="supplier_id")
+	private int supplierId;
+	private int purchases;
+	private int views;
+	
 	
 }

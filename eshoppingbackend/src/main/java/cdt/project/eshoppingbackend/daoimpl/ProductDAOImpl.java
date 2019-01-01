@@ -55,6 +55,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return false;
 	}
 
+	//update
 	@Override
 	public boolean update(Product product) {
 		try {
@@ -70,6 +71,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return false;
 	}
 
+	//delete
 	@Override
 	public boolean delete(Product product) {
 		try {
@@ -81,27 +83,23 @@ public class ProductDAOImpl implements ProductDAO {
 		return false;
 	}
 
+	//list of  products
 	@Override
 	public List<Product> listActiveProducts() {
 		String selectActiveProducts = "FROM Product WHERE active= :active";
-		return sessionFactory.getCurrentSession()
-				.createQuery(selectActiveProducts, Product.class)
-				.setParameter("active", true).getResultList();
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class).setParameter("active", true).getResultList();
 	}
 
+	//list of products by category
 	@Override
 	public List<Product> listActiveProductByCategory(int categoryId) {
 		String selectActiveProductsByCategory = "FROM Product WHERE active= :active AND categoryId= :categoryId";
-		return sessionFactory.getCurrentSession()
-				.createQuery(selectActiveProductsByCategory, Product.class)
-				.setParameter("active", true).setParameter("categoryId", categoryId).getResultList();
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProductsByCategory, Product.class).setParameter("active", true).setParameter("categoryId", categoryId).getResultList();
 	}
 
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {
-		return sessionFactory.getCurrentSession()
-				.createQuery("FROM Product WHERE active = :active ORDER BY Id", Product.class)
-				.setParameter("active", true).setFirstResult(0).setMaxResults(count).getResultList();
+		return sessionFactory.getCurrentSession().createQuery("FROM Product WHERE active = :active ORDER BY id", Product.class).setParameter("active", true).setFirstResult(0).setMaxResults(count).getResultList();
 	}
 
 }

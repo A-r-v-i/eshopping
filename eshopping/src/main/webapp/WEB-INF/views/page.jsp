@@ -29,11 +29,11 @@
 <script>
 	window.menu = '${title}';
 
-	windows.contextRoot = '${contextRoot}'
+	window.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
-<link href="${css}/bootstrap.css" rel="stylesheet">
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">

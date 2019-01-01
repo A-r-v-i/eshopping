@@ -38,8 +38,7 @@ $(function() {
 			jsonUrl = '/json/data/category/' + window.categoryId + '/products';
 		}
 
-		$table
-				.dataTable({
+		$table.dataTable({
 
 					lengthMenu : [
 							[ 3, 5, 10, -1 ],

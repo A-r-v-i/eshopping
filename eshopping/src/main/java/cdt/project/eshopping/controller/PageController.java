@@ -63,7 +63,7 @@ public class PageController {
 	/*
 	 * Methods to load  all the products
 	 * */
-	@RequestMapping(value= "/show/all/product")
+	@RequestMapping(value= "/show/all/products")
 	public ModelAndView showAllProducts() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","All Products");

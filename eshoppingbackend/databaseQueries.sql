@@ -29,16 +29,16 @@ CREATE TABLE user_detail (
 -- adding three users 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Virat', 'Kohli', 'ADMIN', true, '$2a$06$ORtBskA2g5Wg0HDgRE5ZsOQNDHUZSdpJqJ2.PGXv0mKyEvLnKP7SW', 'vk@gmail.com', '8888888888');
+VALUES ('Aravind', 'Babu', 'ADMIN', true, 'password', 'babuaravindsv@gmail.com', '7708623773');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Ravindra', 'Jadeja', 'SUPPLIER', true, '$2a$06$bzYMivkRjSxTK2LPD8W4te6jjJa795OwJR1Of5n95myFsu3hgUnm6', 'rj@gmail.com', '9999999999');
+VALUES ('Vinoth', 'kumar', 'SUPPLIER', true, 'password', 'vk@gmail.com', '9876543210');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Ravichandra', 'Ashwin', 'SUPPLIER', true, '$2a$06$i1dLNlXj2uY.UBIb9kUcAOxCigGHUZRKBtpRlmNtL5xtgD6bcVNOK', 'ra@gmail.com', '7777777777');
+VALUES ('Ravi', 'Teja', 'SUPPLIER', true, 'password', 'rt@gmail.com', '7896541230');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Khozema', 'Nullwala', 'USER', true, '$2a$06$4mvvyO0h7vnUiKV57IW3oudNEaKPpH1xVSdbie1k6Ni2jfjwwminq', 'kn@gmail.com', '7777777777');
+VALUES ('Prakaash', 'Santhanaraman', 'USER', true, 'password', 'ps@gmail.com', '6547893201');
 
 
 CREATE TABLE product (
