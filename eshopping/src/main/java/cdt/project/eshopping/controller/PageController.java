@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import cdt.project.eshoppingbackend.dao.CategoryDAO;
+import cdt.project.eshoppingbackend.dao.ProductDAO;
 import cdt.project.eshoppingbackend.dto.Category;
+import cdt.project.eshoppingbackend.dto.Product;
 
 @Controller
 public class PageController {
@@ -15,6 +17,9 @@ public class PageController {
 	@Autowired
 	private CategoryDAO categoryDAO;
 
+	@Autowired
+	private ProductDAO productDAO;
+	
 	@RequestMapping(value= {"/","/home","/index"})
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("page");
@@ -102,6 +107,18 @@ public class PageController {
 	public ModelAndView showingSingleProduct(@PathVariable int id) {
 		ModelAndView mv = new ModelAndView("page");
 				
+		Product product = productDAO.get(id);
+		
+		//update the view count
+		product.setViews(product.getViews() + 1);
+		productDAO.update(product);
+		
+		mv.addObject("title", product.getName());
+		mv.addObject("product", product);
+		
+		mv.addObject("userClickShowProduct", true);
+		
+		
 		return mv;
 	}
 

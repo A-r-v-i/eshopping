@@ -37,7 +37,8 @@
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
 <!-- DataTables Bootstrap CSS -->
-<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+<link href="${css}/dataTables.bootstrap.min.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -73,6 +74,11 @@
 			<!-- Load when user clicks AllProducts -->
 			<c:if test="${userClickAllProducts ==  true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<!-- load when user click show product -->
+			<c:if test="${userClickShowProduct ==  true}">
+				<%@include file="singleProduct.jsp"%>
 			</c:if>
 
 		</div>
