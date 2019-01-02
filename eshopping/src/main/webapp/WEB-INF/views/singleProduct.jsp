@@ -42,8 +42,8 @@
 	 
 	 <h6>Qty.Available: ${product.quantity}</h6>
 	 
-	 <a href="${contextRoot}/cart/add/${product.id}/product"  class=btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>
-	 <a href="${contextRoot}/show/all/products"  class=btn btn-success">Back</a>
+	 <a href="${contextRoot}/cart/add/${product.id}/product"  class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+	 <a href="${contextRoot}/show/all/products"  class="btn btn-success">Back</a>
 	
 	</div>
 	
