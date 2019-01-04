@@ -1,3 +1,5 @@
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <div class="container">
 
 	<div class="row">
@@ -16,12 +18,14 @@
 
 					<!-- Form elements -->
 
-					<form class="form-horizontal">
+					<sf:form class="form-horizontal" modelAttribute="product"
+					action="${contextRoot}/manage/products"
+					method="POST" >
 						<div class="form-group">
 							<lable class="control-label col-md-4" for="name">Enter
 							Product name:</lable>
 							<div class="col-md-8">
-								<input type="text" id="name" placeholder="Product Name"
+								<sf:input type="text" path="name" id="name" placeholder="Product Name"
 									class="form-control" /> <em class="help-block">Please
 									enter product name</em>
 
@@ -33,8 +37,7 @@
 							<lable class="control-label col-md-4" for="brand">Enter
 							Brand name:</lable>
 							<div class="col-md-8">
-								<input type="text" id="brand" placeholder="Brand Name"
-									class="form-control" /> <em class="help-block">Please
+								<sf:input type="text" path="brand" id="brand" placeholder="Brand Name" class="form-control" /> <em class="help-block">Please
 									enter brand name</em>
 
 							</div>
@@ -44,9 +47,8 @@
 							<labe class="control-label col-md-4" for="description">Enter
 							description here!</labe>
 							<div class="col-md-8">
-								<textarea name="description" rows="6"
-									placeholder="Write your product description here!">								
-							</textarea>
+								<sf:textarea path="description" rows="6"
+									placeholder="Write your product description here!" />
 							</div>
 						</div>
 
@@ -54,7 +56,7 @@
 							<labe class="control-label col-md-4" for="unitPrice">Enter
 							unit price</labe>
 							<div class="col-md-8">
-								<input type="number" name="unitPrice" id="unitPrice"
+								<sf:input type="number" path="unitPrice" id="unitPrice"
 									placeholder="Price of product in &#8377;" />
 							</div>
 						</div>
@@ -63,7 +65,7 @@
 							<labe class="control-label col-md-4" for="quantity">Quantity
 							available</labe>
 							<div class="col-md-8">
-								<input type="number" name="quantity" id="quantity"
+								<sf:input type="number" path="quantity" id="quantity"
 									placeholder="Quantity of products" />
 							</div>
 						</div>
@@ -72,10 +74,12 @@
 							<labe class="control-label col-md-4" for="categoryId">Select
 							category</labe>
 							<div class="col-md-8">
-								<select class="form-control" id="categoryId" name="categoryId">
-									<option value="1">Category one</option>
-									<option value="2">Category two</option>
-								</select>
+								<sf:select class="form-control" id="categoryId" path="categoryId" 
+								items="${categories}"
+								itemLabel="name"
+								itemValu="id"
+								/>
+								
 							</div>
 						</div>
 
@@ -83,6 +87,13 @@
 							<div class="col-md-offset-4 col-md-8">
 								<input type="submit" name="submit" value="Submit"
 									class="btn btn-primary" />
+									
+									<sf:hidden path="id" />
+	                                <sf:hidden path="code" />
+	                                <sf:hidden path="supplierId" />
+	                                <sf:hidden path="active" />
+	                                <sf:hidden path="purchase" />
+	                                <sf:hidden path="views" />								
 							</div>
 						</div>
 				</div>
@@ -95,7 +106,7 @@
 
 
 
-		</form>
+		</sf:form>
 
 	</div>
 
