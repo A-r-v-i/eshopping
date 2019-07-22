@@ -92,7 +92,7 @@ $(function() {
 		    			else {
 		    				str += '<a href=" '+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 		    			}
-                        //return str;
+                       // return str;
 		    		}
 		    	}
 		    ]

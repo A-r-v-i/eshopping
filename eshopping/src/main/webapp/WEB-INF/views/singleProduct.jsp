@@ -59,8 +59,7 @@
 			
 			<c:choose>
 				<c:when test="${product.quantity < 1}">
-					<a href="javascript:void(0)" class="btn btn-success disabled"><strike>
-					<span class="glyphicon glyphicon-shopping-cart"></span></strike></a>
+					<a href="javascript:void(0)" class="btn btn-success disabled"><strike><span class="glyphicon glyphicon-shopping-cart"></span></strike></a>
 				</c:when>
 
 				<c:otherwise>

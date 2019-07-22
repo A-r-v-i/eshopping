@@ -42,7 +42,7 @@ public class ManagementController {
 	
 	//handling product submission
 	@RequestMapping(value="/products",method=RequestMethod.POST)
-	public String handleProductSubmission() {
+	public String handleProductSubmission(@ModelAttribute("product") Product mProduct) {
 		
 		return "redirect:/manage/products";
 	}
